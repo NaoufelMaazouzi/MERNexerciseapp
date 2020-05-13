@@ -43,7 +43,7 @@ function ExercisesList() {
     }
     return (
         <div className="container">
-            <h3>Tous les exercices</h3>
+            <h3>Tous les éxercices</h3>
             <table className="table">
                 <thead className="thead">
                     <tr>
