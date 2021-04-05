@@ -12,7 +12,7 @@ function EditExercises(props) {
     const [users, setUsers] = useState(['test user']);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/exercises/' + props.match.params.id)
+        axios.get('/api/exercises/' + props.match.params.id)
             .then(response => {
                 setUsername(response.data.username);
                 setDescription(response.data.description);
@@ -23,7 +23,7 @@ function EditExercises(props) {
                 console.log(err);
             })
 
-        axios.get('http://localhost:5000/users/')
+        axios.get('/api/users/')
             .then(response => {
                 if (response.data.length > 0) {
                     setUsers(response.data.map(user => user.username))
@@ -60,7 +60,7 @@ function EditExercises(props) {
             date
         }
 
-        axios.post('http://localhost:5000/exercises/update/' + props.match.params.id, exercise)
+        axios.post('/api/exercises/update/' + props.match.params.id, exercise)
             .then(res => console.log(res.data))
             .catch((err) => {
                 console.log(err);

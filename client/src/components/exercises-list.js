@@ -18,7 +18,7 @@ function ExercisesList() {
     const [exercises, setExercises] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/exercises/')
+        axios.get('/api/exercises/')
             .then(response => {
                 setExercises(response.data);
             })
@@ -28,7 +28,7 @@ function ExercisesList() {
     }, [])
 
     function deleteExercise(id) {
-        axios.delete('http://localhost:5000/exercises/' + id)
+        axios.delete('/api/exercises/' + id)
             .then(res => console.log(res.data))
             .catch((err) => {
                 console.log(err)
