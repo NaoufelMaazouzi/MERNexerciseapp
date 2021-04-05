@@ -25,7 +25,7 @@ function ExercisesList() {
             .catch((err) => {
                 console.log(err);
             })
-    })
+    }, [])
 
     function deleteExercise(id) {
         axios.delete('http://localhost:5000/exercises/' + id)
